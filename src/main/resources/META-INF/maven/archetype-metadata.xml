@@ -1,0 +1,112 @@
+<archetype-descriptor
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="codelijst-archetype">
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>be.vlaanderen.omgeving.data.id.graph</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="artifactId">
+            <validationRegex>codelijst-[^.]+</validationRegex>
+        </requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>0.1.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="codelijstId">
+            <defaultValue>${artifactId.replace("codelijst-","")}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="codelijstDomein">
+            <defaultValue>data.omgeving.vlaanderen.be</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="package">
+            <defaultValue>${groupId.replace("graph","conceptscheme.").concat(${codelijstId})}</defaultValue>
+        </requiredProperty>
+<!--        <requiredProperty key="codelijstId"/>-->
+<!--        <requiredProperty key="codelijstDomein"/>-->
+<!--        <requiredProperty key="groupId">-->
+<!--            <defaultValue>${codelijstDomein.concat(".graph")}</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="artifactId">-->
+<!--            <defaultValue>#set($a_prefix = "codelijst-") $a_prefix$codelijstId</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="version">-->
+<!--            <defaultValue>0.1.0-SNAPSHOT</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="package">-->
+<!--            <defaultValue>${codelijstDomein.concat(".id.conceptscheme")}</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="codelijstId">-->
+<!--            <defaultValue>#set($i = $artifactId.indexOf('-') + 1) ${artifactId.substring($i)}</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="package">-->
+<!--            <defaultValue>${groupId.replace("graph", "id.conceptscheme.").concat($codelijstId)}</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="groupId">-->
+<!--            <defaultValue>be.vlaanderen.omgeving.data.graph</defaultValue>-->
+<!--            <validationRegex>be.vlaanderen.([^.]+.)?omgeving.data.graph</validationRegex>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="artifactId">-->
+<!--            <validationRegex>codelijst-[^.]+</validationRegex>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="version">-->
+<!--            <defaultValue>0.1.0-SNAPSHOT</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="codelijstId">-->
+<!--            <defaultValue>#set($i = $artifactId.indexOf('-') + 1) ${artifactId.substring($i)}</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="package">-->
+<!--            <defaultValue>${groupId.replace("graph", "id.conceptscheme.").concat($codelijstId)}</defaultValue>-->
+<!--        </requiredProperty>-->
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true">
+            <directory>bamboo-specs</directory>
+        </fileSet>
+        <fileSet filtered="false">
+            <directory>src/main/bash</directory>
+        </fileSet>
+        <fileSet filtered="false">
+            <directory>src/main/R</directory>
+            <includes>
+                <include>csv_to_rdf.R</include>
+                <include>dcat-from-csv.R</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/main/R</directory>
+            <includes>
+                <include>config.yml</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/resources/</directory>
+            <excludes>
+                <exclude>**/source/*</exclude>
+                <exclude>**/source</exclude>
+                <exclude>**/be/**</exclude>
+                <exclude>**/be/vlaanderen/omgeving/data/id/dataset/**</exclude>
+                <exclude>**/be</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/main/resources/source</directory>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory>src/main/resources/be</directory>
+        </fileSet>
+        <fileSet filtered="false">
+            <directory></directory>
+            <includes>
+                <include>LICENSE</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>
+
