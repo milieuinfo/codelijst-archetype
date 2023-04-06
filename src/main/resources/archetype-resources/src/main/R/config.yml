@@ -1,11 +1,11 @@
 skos:
   distributie_pad: ../resources/${package.replace(".","/").concat("/")}
-  distributie_naam: testrepo
+  distributie_naam: ${codelijstId}
   jsonld_source: ../resources/source/codelijst_context.json
   csv_source: ../resources/source/codelijst_source.csv
 dcat:
-  distributie_pad : ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-${codelijstId}/
-  distributie_naam: catalog
+  distributie_pad_catalog: ../resources/be/vlaanderen/omgeving/data/id/catalog/codelijst-${codelijstId}/
+  distributie_pad_dataset: ../resources/be/vlaanderen/omgeving/data/id/dataset/codelijst-${codelijstId}/
   jsonld_source : ../resources/source/catalog_context.json
-  csv_source : ../resources/source/catalog_source.csv
-
+  dataset_source : ../resources/source/dataset_source.csv
+  catalog_source : ../resources/source/catalog_source.csv

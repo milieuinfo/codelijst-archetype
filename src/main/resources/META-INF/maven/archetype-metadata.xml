@@ -21,42 +21,6 @@
         <requiredProperty key="package">
             <defaultValue>${groupId.replace("graph","conceptscheme.").concat(${codelijstId})}</defaultValue>
         </requiredProperty>
-<!--        <requiredProperty key="codelijstId"/>-->
-<!--        <requiredProperty key="codelijstDomein"/>-->
-<!--        <requiredProperty key="groupId">-->
-<!--            <defaultValue>${codelijstDomein.concat(".graph")}</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="artifactId">-->
-<!--            <defaultValue>#set($a_prefix = "codelijst-") $a_prefix$codelijstId</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="version">-->
-<!--            <defaultValue>0.1.0-SNAPSHOT</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="package">-->
-<!--            <defaultValue>${codelijstDomein.concat(".id.conceptscheme")}</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="codelijstId">-->
-<!--            <defaultValue>#set($i = $artifactId.indexOf('-') + 1) ${artifactId.substring($i)}</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="package">-->
-<!--            <defaultValue>${groupId.replace("graph", "id.conceptscheme.").concat($codelijstId)}</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="groupId">-->
-<!--            <defaultValue>be.vlaanderen.omgeving.data.graph</defaultValue>-->
-<!--            <validationRegex>be.vlaanderen.([^.]+.)?omgeving.data.graph</validationRegex>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="artifactId">-->
-<!--            <validationRegex>codelijst-[^.]+</validationRegex>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="version">-->
-<!--            <defaultValue>0.1.0-SNAPSHOT</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="codelijstId">-->
-<!--            <defaultValue>#set($i = $artifactId.indexOf('-') + 1) ${artifactId.substring($i)}</defaultValue>-->
-<!--        </requiredProperty>-->
-<!--        <requiredProperty key="package">-->
-<!--            <defaultValue>${groupId.replace("graph", "id.conceptscheme.").concat($codelijstId)}</defaultValue>-->
-<!--        </requiredProperty>-->
     </requiredProperties>
 
     <fileSets>
@@ -70,7 +34,7 @@
             <directory>src/main/R</directory>
             <includes>
                 <include>csv_to_rdf.R</include>
-                <include>dcat-from-csv.R</include>
+                <include>dcat-from-csv-2.0.0.R</include>
             </includes>
         </fileSet>
         <fileSet filtered="true">
@@ -86,6 +50,7 @@
                 <exclude>**/source</exclude>
                 <exclude>**/be/**</exclude>
                 <exclude>**/be/vlaanderen/omgeving/data/id/dataset/**</exclude>
+                <exclude>**/be/vlaanderen/omgeving/data/id/catalog/**</exclude>
                 <exclude>**/be</exclude>
             </excludes>
         </fileSet>

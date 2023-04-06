@@ -1,5 +1,7 @@
 {
-  "blabla": {
+  "uri": "@id",
+  "type": "@type",
+  "altLabel": {
     "@id": "skos:altLabel",
     "@language": "nl"
   },
