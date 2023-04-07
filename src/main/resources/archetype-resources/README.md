@@ -32,6 +32,11 @@ Eventuele custom csv kan op basis van een sparql query gegenereerd worden
 ```
 sparql --results=CSV --data={data_inputfile}  --query {file_containing_a_query} > {csv_outputfile}
 ```
+Voorbeeld:
+```
+cd $PROJECT_HOME/src/main/sparql
+sparql --results=CSV --data=../resources/be/vlaanderen/omgeving/data/id/conceptscheme/{codelijstId}/{codelijstId}.ttl  --query sparql_csv_ex1.sparql > ../resources/be/vlaanderen/omgeving/data/id/conceptscheme/{codelijstId}/{codelijstId}_example.csv
+```
 ### Commit/push de wijzigingen
 Geef steeds een duidelijke commit boodschap mee (i.e vermelding van de gelogde issues die zijn opgelost).
 
