@@ -131,7 +131,7 @@ df <- expand_df_on_pipe(df)%>%
 
 # write volledig geexpandeerde csv, ter controle, deze wordt niet aan versiebeheer toegevoegd
 test_distributie <- paste(dataset_distributie_pad, "temp_test_separate_rows.csv", sep="")
-write.csv(df,test_distributie, row.names = FALSE, row.names = FALSE, na='', fileEncoding='UTF-8')
+write.csv(df,test_distributie,row.names = FALSE, na='', fileEncoding='UTF-8')
 
 # bewaar jsonld
 tmp_file <- tempfile(fileext = ".jsonld")
